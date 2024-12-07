@@ -1,0 +1,15 @@
+when trying to install discord.py, some of you may be getting an error saying your python is externally managed. to get around this, and as a best practice in general, its best to setup a virtual environment and then install discord.py and run the bot through that. 
+heres how you do that:
+
+python3 -m venv venv
+souurce venv/bin/activate
+pip install discord
+
+after you've done that you will also want to add your your bot token as an environment variable.
+to do this, you simply want to run the following command, but make sore to substitude [enter token] with your own token!
+
+export TOKEN=[enter token]
+
+also set the id of the guild youre testing this in with the following
+
+export GUILD_ID=[enter guild id]
