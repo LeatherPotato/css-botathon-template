@@ -32,16 +32,14 @@ async def on_ready():
 
 # commands go here
 
-@app_commands.command(description="syncs the command tree manually, though the bot is set up to do this automatically on run.")
-@client.tree.command(name='sync', description='Owner only')
+@client.tree.command(name='sync', description="syncs the command tree manually, though the bot is set up to do this automatically on run.")
 async def sync(interaction: discord.Interaction):
     # id reccomend you add some checks here to make sure only people with specific permissions can sync the command tree.
     await client.tree.sync()
     print('Command tree synced.')
     await interaction.response.send_message('Command tree synced.')
 
-@app_commands.command(description="pings the bot and returns the latency")
-@client.tree.command()
+@client.tree.command(description="pings the bot and returns the latency")
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f'pong!! {round(client.latency, 1)}s')
 
